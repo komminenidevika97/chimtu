@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/@lottiefiles/dotlottie-wc@latest/dist/dotlottie-wc.js" type="module"></script>
+    <style>
+        img{
+            border: 2px solid gold;
+            border-radius: 50%;
+            cursor: pointer;
+            width: 400px;
+            height: 400px;
+        }
+        #golden_celebration{
+            position: absolute;
+            z-index: 1;
+            top: 10%;
+            left: 30%;
+        }
+        h1{
+            font-size: 70px;
+            background-image: url('https://webneel.com/daily/sites/default/files/images/daily/04-2013/7-colorful-photography.jpg');
+            background-clip: text;
+            color: transparent;
+           
+        }
+    </style>
+        
+</head>
+<body style="text-align: center;">
+     <dotlottie-wc 
+        id="golden_celebration"
+        src=""
+        speed="1" 
+        style="width: 0px; height: 0px;" 
+        loop
+        autoplay
+        
+        >
+    </dotlottie-wc>
+    <img id="first_egg" onclick="check_your_luck('first_egg')" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy523zZwKZ68thaHsq746cJUnwKOafSazne4m7tD_WhQ&s"/>
+    <img id="second_egg" onclick="check_your_luck('second_egg')" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy523zZwKZ68thaHsq746cJUnwKOafSazne4m7tD_WhQ&s"/>
+    <img id="third_egg" onclick="check_your_luck('third_egg')" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSy523zZwKZ68thaHsq746cJUnwKOafSazne4m7tD_WhQ&s"/>
+    <h1 id="congratulate"></h1>
+<script>
+    golden_egg_number=Math.ceil(Math.random()*3)
+    console.log(golden_egg_number)
+    let k=document.getElementById('golden_celebration')
+  
+    function check_your_luck(id){
+        
+     let selected_item= document.getElementById(id)
+     let msg=document.getElementById('congratulate')
+   
+
+    if(id=='first_egg' && golden_egg_number==1){
+        k.setAttribute('src','./asserts/celebration.lottie')
+        
+        k.style.width='800px'
+        k.style.height='700px'
+       
+        selected_item.src='https://png.pngtree.com/png-vector/20250806/ourmid/pngtree-original-hand-drawn-golden-egg-smashing-hammer-decorative-elements-png-image_17024846.webp'
+        msg.innerHTML='Congratulations! You have found the golden egg!'
+    
+    }
+    else if(id=='second_egg' && golden_egg_number==2){
+         k.setAttribute('src','./asserts/celebration.lottie')
+        k.style.width='800px'
+        k.style.height='700px'  
+        selected_item.src='https://png.pngtree.com/png-vector/20250806/ourmid/pngtree-original-hand-drawn-golden-egg-smashing-hammer-decorative-elements-png-image_17024846.webp'
+        msg.innerHTML='Congratulations! You have found the golden egg!'
+    }
+    else if(id=='third_egg' && golden_egg_number==3){
+         k.setAttribute('src','./asserts/celebration.lottie')
+        k.style.width='800px'
+        k.style.height='700px'
+        selected_item.src='https://png.pngtree.com/png-vector/20250806/ourmid/pngtree-original-hand-drawn-golden-egg-smashing-hammer-decorative-elements-png-image_17024846.webp'
+        msg.innerHTML='Congratulations! You have found the golden egg!'
+    }
+    else{
+        selected_item.src='https://png.pngtree.com/png-clipart/20210205/ourmid/pngtree-smashed-golden-egg-png-image_2870884.jpg'
+
+    }
+
+  }
+</script>
+
+</body>
+</html>
